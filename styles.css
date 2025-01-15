@@ -16,6 +16,7 @@ header {
 
 .hero {
   display: flex;
+  flex-direction: column;
   width: 80%;
   margin: 0 auto;
 }
@@ -76,7 +77,8 @@ main {
   width: 80%;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  display: flex;
+  flex-direction: column;
   gap: 1.5rem;
 }
 
@@ -143,12 +145,35 @@ footer {
 }
 
 .footer-img {
-  flex: 3;
+  flex: 2;
   display: flex;
   align-items: center;
   justify-content: center;
+  display: none;
 }
 
 .footer-img img {
   width: 80%;
+}
+
+@media (min-width: 900px) {
+  .projects {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1200px) {
+  .projects {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .hero {
+    flex-direction: row;
+  }
+
+  .footer-img {
+    display: inline-block;
+  }
 }
